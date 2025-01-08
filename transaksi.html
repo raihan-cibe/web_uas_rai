@@ -1,0 +1,92 @@
+<html>
+<head>
+  <title>Transaksi - Aplikasi Perpustakaan</title>
+  <title>Aplikasi Perpustakaan</title>
+  <link rel="stylesheet" href="transaksi.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo perpus.jpg" alt="Logo Perpustakaan" height="80"> 
+    <h1>Aplikasi Perpustakaan</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="transaksi.html">Transaksi</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Transaksi Peminjaman</h2>
+    <form action="#" method="post">
+      <label for="judul_buku">Judul Buku:</label><br>
+      <input type="text" id="judul_buku" name="judul_buku"><br><br>
+
+      <label for="nama_peminjam">Nama Peminjam:</label><br>
+      <input type="text" id="nama_peminjam" name="nama_peminjam"><br><br>
+
+      <label for="tanggal_pinjam">Tanggal Pinjam:</label><br>
+      <input type="date" id="tanggal_pinjam" name="tanggal_pinjam"><br><br>
+
+      <input type="submit" value="Pinjam">
+    </form>
+
+    <h2>Daftar Transaksi</h2>
+    <a href="daftar_transaksi.html">Lihat Daftar Transaksi</a> <br /><br />
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Transaksi</th>
+          <th>Jumlah</th>
+          <th>Kategori</th>
+        </tr>
+    </table>
+    <div class="action">
+      <button type="button" class="btn btn-add" onclick="addTransaction()"> Add New Transaksi</button>
+  </div>
+  
+<script> 
+  function addTransaction() {}
+  document.getElementById('transaksi').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah pengiriman form secara default
+
+  // Mengambil nilai dari input
+  const namaTransaksi = document.getElementById('namaTransaksi').value;
+  const jumlah = document.getElementById('jumlah').value;
+  const kategori = document.getElementById('kategori').value;
+
+  // Validasi input
+  if (namaTransaksi === '' || jumlah === '' || kategori === '') {
+      alert('Semua field harus diisi!');
+      return; // Menghentikan eksekusi jika ada field yang kosong
+  }
+
+  // Menambahkan data ke tabel
+  const tableBody = document.querySelector('tbody');
+  const newRow = document.createElement('tr');
+
+  newRow.innerHTML = `
+      <td>${namaTransaksi}</td>
+      <td>${jumlah}</td>
+      <td>${kategori}</td>
+  `;
+
+  tableBody.appendChild(newRow);
+
+  // Mengosongkan input setelah data ditambahkan
+  document.getElementById('transaksiForm').reset();
+});
+</script>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aplikasi Perpustakaan</p>
+  </footer>
+  <script src="js.js"></script>
+
+</body>
+</html>

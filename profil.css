@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+  }
+  
+  /* Header Styling */
+  header {
+    background-color:aquamarine;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header img {
+    height: 80px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #00a6a6, #0070b8);
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  /* Main Content Styling */
+  .profile-container {
+    width: 80%; /* Lebar container disesuaikan */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-container h2 {
+    color: #333; /* Warna judul */
+    margin-bottom: 10px; 
+  }
+  
+  .profile-container p {
+    text-align: justify; /* Teks rata kanan-kiri */
+    line-height: 1.6; /* Spasi antar baris */
+  }
+  
+  .profile-container ul {
+    list-style-type: disc; /* Ubah jenis bullet point */
+    margin-left: 20px;
+  }
+  
+  /* Footer Styling (sama seperti di style.css) */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .profile-container {
+      width: 90%;
+    }
+  
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  }
